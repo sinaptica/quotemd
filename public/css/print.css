@@ -1,0 +1,311 @@
+/*!
+ *
+ * FONTS STYLES
+ *
+ */
+@font-face {
+  font-family: 'Roboto';
+  src: local("Roboto Medium"),
+       url(../fonts/roboto/Roboto-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local("Roboto Light"),
+       url(../fonts/roboto/Roboto-Light.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: local("Roboto Thin"),
+       url(../fonts/roboto/Roboto-Thin.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: local("Noto Sans Regular"),
+       url(../fonts/noto-sans/NotoSans-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: local("Noto Sans Bold"),
+       url(../fonts/noto-sans/NotoSans-Bold.ttf);
+  font-weight: 700;
+}
+
+/*!
+ * 
+ * GENERAL
+ * STYLE
+ *
+ */
+*:focus {
+   outline: none;
+}
+
+@media print and (color) {
+   * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+   }
+}
+
+body {
+   background: transparent;
+   background-color: rgba(0, 0, 0, .02);
+   -webkit-print-color-adjust: exact;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: 'Roboto';
+   font-weight: 400;
+   color: #222;
+}
+
+p {
+   font-size: 16px;
+   color: #929292;
+   font-family: 'Noto Sans';
+   font-weight: 400;
+}
+
+p strong {
+   color: #666;
+}
+
+code {
+   font-size: 80%;
+   color: #c7254e;
+   border: 1px solid rgba(128, 128, 128, 0.075);
+   -webkit-print-color-adjust: exact;
+}
+
+a,
+a:active,
+a:focus {
+   color: #58CC76;
+}
+
+
+a:hover {
+   color: #52B76C;
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none;
+}
+
+.container {
+   position: relative;
+}
+
+/*!
+ * 
+ * QUOTE
+ * STYLE
+ *
+ */
+#quote-header,
+.quote-header {
+   position: relative;
+   background-color: #66bb6a;
+   background: #66bb6a;
+   padding-bottom: 140px;
+   text-align: center;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+   -webkit-print-color-adjust: exact;
+}
+
+.quote-header .img-header {
+   margin: 16px auto;
+   width: 300px;
+}
+
+.quote-inner {
+   margin-top: -140px;
+   margin-bottom: 100px;
+}
+
+.container.quote {
+   background-color: #fff;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+   padding: 30px 20px;
+}
+
+.container.quote:first-child {
+   margin-bottom: 20px;
+}
+
+.info-data {
+   margin: 20px 0;
+}
+
+.info-data.date {
+   text-align: left;
+}
+
+.info-data.date h3 {
+   margin-bottom: 0;
+}
+
+.info-data p {
+   margin: 0;
+}
+
+
+.btn-floating {
+   display: inline-block;
+   color: #fff;
+   overflow: hidden;
+   font-size: 24px;
+   z-index: 1;
+   width: 56px;
+   height: 56px;
+   line-height: 47px;
+   padding: 0;
+   background-color: #4fc3f7;
+   border-radius: 50%;
+   border: 0;
+   transition: .3s;
+   cursor: pointer;
+   vertical-align: middle;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-floating:focus {
+   background-color: #03a9f4;
+}
+
+.btn-floating.absolute {
+   position: fixed;
+   bottom: 10px;
+   right: 10px;
+}
+
+/*!
+ * 
+ * LIST
+ * STYLE
+ *
+ */
+ul li {
+   font-family: 'Noto Sans';
+   font-weight: 400;
+   font-size: 16px;
+   color: #929292;
+}
+
+/*!
+ * 
+ * TABLES
+ * STYLE
+ *
+ */
+table {
+   width: 100%;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+   padding: 5px;
+   font-family: 'Noto Sans';
+   font-weight: 400;
+   margin: 10px 0 20px;
+}
+
+table th {
+   font-size: 14px;
+   font-weight: 500;
+   color: #888;
+   font-family: 'Roboto';
+}
+
+table th,
+table td {
+   padding: 15px 15px;
+   border-bottom: 1px solid #eee;
+}
+
+table tbody tr:hover {
+   background-color: rgba(0, 0, 0, .025);
+}
+
+/*!
+ * 
+ * LINE
+ * STYLE
+ *
+ */
+hr {
+   border-top: 1px solid #ddd;
+}
+
+/*!
+ * 
+ * QUOTE
+ * STYLE
+ *
+ */
+blockquote {
+   background-color: #fafafa;
+   border-left: 10px solid #eee;
+}
+
+/*!
+ * 
+ * CODE
+ * STYLE
+ *
+ */
+pre {
+   border: 0;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.12),0 2px 10px 0 rgba(0,0,0,0.08);
+}
+
+/*!
+ * 
+ * CARDS
+ * STYLE
+ *
+ */
+.card {
+   position: relative;
+   margin: 0.5rem 0 2rem 0;
+   background-color: #fafafa;
+   transition: box-shadow .25s;
+   border-radius: 2px;
+   box-shadow: none;
+}
+
+.card .card-content {
+   padding: 20px;
+   border-radius: 0 0 2px 2px;
+}
+
+.card .card-title {
+   margin: 0 0 10px 0;
+   font-weight: 400;
+   font-family: 'Roboto';
+}
+
+.card .card-content p {
+   margin: 0;
+   color: #929292;
+}
+
+.card .card-content .img-logo {
+   margin: 10px 0;
+}

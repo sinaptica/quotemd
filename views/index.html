@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Markdown Test</title>
+   
+   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+   <link href="../public/css/bootstrap.css" rel="stylesheet">
+   <link href="../public/css/monokai-sublime.css" rel="stylesheet">
+   <link href="../public/css/ionicons.css" rel="stylesheet">
+   <link href="../public/css/main.css" rel="stylesheet">
+</head>
+<body ng-app="markdownTest" ng-cloak style="-webkit-print-color-adjust:exact;">
+   <!--
+   <button class="btn-floating absolute"><i class="ion-android-create"></i></button>
+   -->
+   
+   <section id="quote-header" class="quote-header">
+      <div class="container">
+         <img id="logo" class="img-header"
+              src="../public/img/logo-blanco.png">
+      </div>
+   </section>
+   
+   <div class="quote-inner" ng-controller="dataController">
+      <div class="container quote header">
+         <div class="row">
+            <div class="col-xs-4">
+               <div class="info-data date">
+                  <h3>04/04/2016</h3>
+                  <p>Statement of Work</p>
+               </div>
+               <div class="card">
+                  <div class="card-content">
+                     <h3 class="card-title">Quote to:</h3>
+                     <img class="img-logo" src="http://www.apexamerica.com/themes/front/maqueta/img/apex2.png">
+                     <p>Client Name</p>
+                     <p>client@email.com</p>
+                     <p>www.clientwebsite.com</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="card-content">
+                     <h3 class="card-title">Prepared by:</h3>
+                     <p>Maximiliano Cañellas</p>
+                     <p>mcañellas@sinaptica.com.ar</p>
+                  </div>
+               </div>
+               <div class="info-data prepared-by">
+               </div>
+            </div>
+            <div class="col-xs-8">
+               <md ng-model="data.quote"></md>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script src="../public/js/marked.js"></script>
+   <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+   <script src="../public/js/angular.min.js"></script>
+   <script src="../public/js/angular-md.js"></script>
+   <script src="../public/js/angular-bootstrap.min.js"></script>
+   <script src="../public/js/script.js"></script>
+</body>
+</html>
