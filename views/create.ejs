@@ -16,6 +16,7 @@
       ng-cloak
       id="bodyQuote">
    <div ng-controller="createController">
+      <div class="darkLayer" ng-class="{ 'visible': isMinize }"></div>
       <section id="quote-header" class="quote-header">
          <div class="container">
             <img id="logo" class="img-header"
@@ -64,34 +65,50 @@
       </div>
 
       <div class="createInner">
-         <header>
-            <h3 class="title">Write Quote</h3>            
-         </header>
-         <div class="row">
-            <div class="col-sm-8">
-               <textarea class="form-control"
-                         rows="7"
-                         ng-model="content">{{ content }}</textarea>
+         <div class="headerInner">
+            <header class="container"
+                    ng-click="minimize()">
+               <h4 class="title">
+                  Write Quote
+               </h4>
+               <i class="ion-android-close minimize"
+                  ng-hide="!isMinize"></i>
+
+               <i class="ion-android-add minimize"
+                  ng-show="!isMinize"></i>
+            </header>
+         </div>
+         <div class="container hiddenBody" ng-class="{'closed': isMinize}">
+            <div class="row">
+               <div class="col-sm-6">
+                  <textarea class="form-control"
+                            rows="7"
+                            ng-model="content">{{ content }}</textarea>
+               </div>
+               <div class="col-sm-6">
+               </div>
             </div>
-            <div class="col-sm-4">
-               <button type="button"
-                       class="btn btn-options"
-                       ng-click="savePDF('bodyQuote')">
-                  <i class="ion-android-download"></i> export as .pdf
-               </button>
+            <div class="row">
+               <div class="col-sm-12">
+                  <button type="button"
+                          class="btn btn-options"
+                          ng-click="savePDF('bodyQuote')">
+                     <i class="ion-android-download"></i> export pdf
+                  </button>
 
-               <button type="button"
-                       class="btn btn-options"
-                       ng-click="downloadFile('fileName.txt', content)">
-                  <i class="ion-android-download"></i> save .md file
-               </button>
+                  <button type="button"
+                          class="btn btn-options"
+                          ng-click="downloadFile('fileName.txt', content)">
+                     <i class="ion-android-download"></i> save file
+                  </button>
 
-               <button type="button" class="btn btn-options">
-                  <i class="ion-android-upload"></i> Upload File
-                  <input on-read-file="showContent($fileContent)"
-                         type="file"
-                         class="upload">
-               </button>
+                  <button type="button" class="btn btn-options">
+                     <i class="ion-android-upload"></i> Upload File
+                     <input on-read-file="showContent($fileContent)"
+                            type="file"
+                            class="upload">
+                  </button>
+               </div>
             </div>
          </div>
       </div>

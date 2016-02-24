@@ -36,6 +36,23 @@ var app = angular.module('markdownTest', [
    });
 })
 .controller('createController', function($scope) {
+   var aux = 1;
+   $scope.isMinize = false;
+
+   $scope.minimize = function() {   
+      if(aux) {
+         $scope.isMinize = true;
+         aux = 0;
+      } else {
+         $scope.isMinize = false;
+         aux = 1;
+      };      
+   }
+
+   $scope.maximize = function() {
+      $scope.isMinize = false;
+   }
+
    $scope.savePDF = function() { window.print(); };
    
    $scope.showContent = function($fileContent){ $scope.content = $fileContent; };
@@ -43,7 +60,7 @@ var app = angular.module('markdownTest', [
    $scope.downloadFile = function(filename, data) {
       var success = false;
       var contentType = 'text/plain;charset=utf-8';
-      
+
       try {
          // Try using msSaveBlob if supported
          var blob = new Blob([data], { type: contentType });

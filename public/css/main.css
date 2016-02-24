@@ -355,6 +355,32 @@ pre {
  * INNER
  *
  */
+.darkLayer {
+   display: none;
+}
+
+@media screen {
+   .darkLayer {
+      display: initial;
+      position: fixed;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      -webkit-transition: all ease 0.5s;
+   }
+
+   .darkLayer.visible {
+      z-index: 5;
+      background-color: rgba(0, 0, 0, .4);
+   }
+}
+
+/*!
+ * 
+ * TEXTAREA
+ * INNER
+ *
+ */
 .createInner {
    display: none;
 }
@@ -369,12 +395,30 @@ pre {
       right: 0;
       z-index: 10;
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-      padding: 10px;
+      padding: 0;
    }
 }
 
+.createInner .headerInner {
+   background-color: #4CAF50;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+}
+
 .createInner header .title {
-   margin: 0 0 6px;
+   margin: 6px 0;
+   text-transform: uppercase;
+   text-align: center;
+   color: #fff;
+   font-family: 'Noto Sans'
+}
+
+.createInner header .minimize {
+   position: absolute;
+   font-size: 20px;
+   right: 0;
+   top: 2px;
+   color: #fff;
 }
 
 .btn {
@@ -390,6 +434,8 @@ pre {
    border: 0;
    position: relative;
    overflow: hidden;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+   margin-bottom: 10px;
 }
 
 input.upload {
@@ -401,4 +447,30 @@ input.upload {
    outline: none;
    cursor: inherit;
    position: absolute;
+}
+
+textarea.form-control,
+textarea.form-control:focus {
+   border-color: transparent;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+textarea.form-control {
+   background-color: #fafafa;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   transition: 0.3s;
+}
+
+.hiddenBody {
+  overflow-y: hidden;
+  transition-property: all;
+  transition-duration: .5s;
+  -webkit-transition-timing-function: lineal;
+  transition-timing-function: lineal;
+  max-height: 0;
+}
+
+.hiddenBody.closed {
+  max-height: 500px;
 }
