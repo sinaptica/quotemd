@@ -25,7 +25,6 @@ var app = angular.module('markdownTest', [
       var promise = $http.get("../md/example.md").then(function (response) {
          return response.data;
       });
-      console.log(promise);
       return promise;
    };
 })
@@ -51,14 +50,14 @@ var app = angular.module('markdownTest', [
    });
 
    /* minimize createInner */
-   $scope.minimize = function() {   
+   $scope.minimize = function() {
       if(aux) {
          $scope.isMinize = true;
          aux = 0;
       } else {
          $scope.isMinize = false;
          aux = 1;
-      };      
+      };
    };
 
    /* savePDF function */
