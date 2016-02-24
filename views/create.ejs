@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Markdown Test</title>
+   
+   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+   <link href="../css/bootstrap.css" rel="stylesheet">
+   <link href="../css/monokai-sublime.css" rel="stylesheet">
+   <link href="../css/ionicons.css" rel="stylesheet">
+   <link href="../css/main.css" rel="stylesheet">
+</head>
+<body ng-app="markdownTest"
+      ng-cloak
+      id="bodyQuote">
+   <div ng-controller="createController">
+      <section id="quote-header" class="quote-header">
+         <div class="container">
+            <img id="logo" class="img-header"
+                 src="../img/logo-blanco.png">
+         </div>
+      </section>
+      
+      <div class="quote-inner">
+         <div class="container quote header">
+            <div class="info-data date">
+               <h3>Noviembre 5, 2016</h3>
+               <p>Statement of Work</p>
+            </div>
+
+            <div class="row">
+               <div class="col-xs-6">
+                  <div class="card">
+                     <div class="card-content">
+                        <h3 class="card-title">Quote to:</h3>
+                        <p>Client Name</p>
+                        <p>client@email.com</p>
+                        <p>www.clientwebsite.com</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xs-6">
+                  <div class="card">
+                     <div class="card-content">
+                        <h3 class="card-title">Prepared by:</h3>
+                        <p>Maximiliano Cañellas</p>
+                        <p>Consultor en Seguridad Informática</p>
+                        <p>mcañellas@sinaptica.com.ar</p>
+                     </div>
+                  </div>
+                  <div class="info-data prepared-by">
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="col-xs-12">
+                  <md ng-model="content"></md>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="createInner">
+         <header>
+            <h3 class="title">Write Quote</h3>            
+         </header>
+         <div class="row">
+            <div class="col-sm-8">
+               <textarea class="form-control"
+                         rows="7"
+                         ng-model="content">{{ content }}</textarea>
+            </div>
+            <div class="col-sm-4">
+               <button type="button"
+                       class="btn btn-options"
+                       ng-click="savePDF('bodyQuote')">
+                  <i class="ion-android-download"></i> export as .pdf
+               </button>
+
+               <button type="button"
+                       class="btn btn-options"
+                       ng-click="downloadFile('fileName.txt', content)">
+                  <i class="ion-android-download"></i> save .md file
+               </button>
+
+               <button type="button" class="btn btn-options">
+                  <i class="ion-android-upload"></i> Upload File
+                  <input on-read-file="showContent($fileContent)"
+                         type="file"
+                         class="upload">
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script src="../js/marked.js"></script>
+   <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+   <script src="../js/angular.min.js"></script>
+   <script src="../js/angular-md.js"></script>
+   <script src="../js/angular-bootstrap.min.js"></script>
+   <script src="../js/script.js"></script>
+</body>
+</html>

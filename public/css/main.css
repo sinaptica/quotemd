@@ -156,6 +156,10 @@ a:hover {
    .container.quote {
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
    }
+
+   .quote-inner {
+      margin-bottom: 270px;
+   }
 }
 
 .container.quote:first-child {
@@ -343,4 +347,58 @@ pre {
 
 .card .card-content .img-logo {
    margin: 10px 0;
+}
+
+/*!
+ * 
+ * TEXTAREA
+ * INNER
+ *
+ */
+.createInner {
+   display: none;
+}
+
+ @media screen {
+   .createInner {
+      display: block;
+      background-color: #E2E2E2;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+   }
+}
+
+.createInner header .title {
+   margin: 0 0 6px;
+}
+
+.btn {
+   font-family: 'Roboto';
+   font-weight: 500;
+   text-transform: uppercase;
+}
+
+.btn.btn-options {
+   color: #fff;
+   background-color: #66bb6a;
+   border-radius: 0;
+   border: 0;
+   position: relative;
+   overflow: hidden;
+}
+
+input.upload {
+   right: 0;
+   margin: 0;
+   bottom: 0;
+   padding: 0;
+   opacity: 0;
+   outline: none;
+   cursor: inherit;
+   position: absolute;
 }

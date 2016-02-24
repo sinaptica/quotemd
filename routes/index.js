@@ -5,4 +5,8 @@ router.get('/', function(req, res) {
   res.render('index');
 });
 
+router.get('/create', function(req, res) {
+  res.render('create');
+});
+
 module.exports = router;
