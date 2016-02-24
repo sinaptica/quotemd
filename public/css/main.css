@@ -366,7 +366,7 @@ pre {
       min-width: 100%;
       min-height: 100%;
       z-index: -1;
-      -webkit-transition: all ease 0.5s;
+      transition: all ease 0.5s;
    }
 
    .darkLayer.visible {
@@ -388,7 +388,7 @@ pre {
  @media screen {
    .createInner {
       display: block;
-      background-color: #E2E2E2;
+      background-color: #f8f8f8;
       position: fixed;
       width: 100%;
       bottom: 0;
@@ -449,17 +449,32 @@ input.upload {
    position: absolute;
 }
 
-textarea.form-control,
-textarea.form-control:focus {
+.form-group {
+   margin-bottom: 10px;
+}
+
+.form-group .input-label {
+   display: block;
+   margin-top: 10px;
+   margin-bottom: 0;
+   color: #929292;
+}
+
+.form-control,
+.form-control:focus {
    border-color: transparent;
    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 
+.form-control {
+   background-color: #fff;
+   margin-top: 5px;
+}
+
 textarea.form-control {
-   background-color: #fafafa;
-   margin-top: 10px;
-   margin-bottom: 10px;
-   transition: 0.3s;
+   max-height: 278px;
+   height: 278px;
+   max-width: 100%;
 }
 
 .hiddenBody {

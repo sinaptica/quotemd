@@ -36,9 +36,9 @@
                   <div class="card">
                      <div class="card-content">
                         <h3 class="card-title">Quote to:</h3>
-                        <p>Client Name</p>
-                        <p>client@email.com</p>
-                        <p>www.clientwebsite.com</p>
+                        <p>{{ client_name }}</p>
+                        <p>{{ client_email }}</p>
+                        <p>{{ client_web }}</p>
                      </div>
                   </div>
                </div>
@@ -46,9 +46,9 @@
                   <div class="card">
                      <div class="card-content">
                         <h3 class="card-title">Prepared by:</h3>
-                        <p>Maximiliano Cañellas</p>
-                        <p>Consultor en Seguridad Informática</p>
-                        <p>mcañellas@sinaptica.com.ar</p>
+                        <p>{{ user_name }}</p>
+                        <p>{{ user_position }}</p>
+                        <p>{{ user_email }}</p>
                      </div>
                   </div>
                   <div class="info-data prepared-by">
@@ -80,16 +80,60 @@
          </div>
          <div class="container hiddenBody" ng-class="{'closed': isMinize}">
             <div class="row">
-               <div class="col-sm-6">
-                  <textarea class="form-control"
-                            rows="7"
-                            ng-model="content">{{ content }}</textarea>
+               <div class="col-sm-4">
+                  <div class="form-group">
+                     <label class="input-label">Quote to</label>
+                     <input type="text"
+                            class="form-control"
+                            placeholder="Client name"
+                            ng-model="client_name">
+                  </div>
+                  <div class="form-group">
+                     <input type="email"
+                            class="form-control"
+                            placeholder="Client email"
+                            ng-model="client_email">
+                  </div>
+                  <div class="form-group">
+                     <input type="text"
+                            class="form-control"
+                            placeholder="Client Website"
+                            ng-model="client_web">
+                  </div>
+
+
+                  <div class="form-group">
+                     <label class="input-label">Prepared by</label>
+                     <input type="text"
+                            class="form-control"
+                            placeholder="Full Name"
+                            ng-model="user_name">
+                  </div>
+                  <div class="form-group">
+                     <input type="text"
+                            class="form-control"
+                            placeholder="Company Position"
+                            ng-model="user_position">
+                  </div>
+                  <div class="form-group">
+                     <input type="email"
+                            class="form-control"
+                            placeholder="Email"
+                            ng-model="user_email">
+                  </div>
                </div>
-               <div class="col-sm-6">
+               <div class="col-sm-8">
+                  <div class="form-group">
+                     <label class="input-label">Quote body</label>
+                     <textarea class="form-control"
+                               rows="7"
+                               ng-model="content"
+                               placeholder="Enter your quote body here.">{{ content }}</textarea>
+                  </div>
                </div>
             </div>
             <div class="row">
-               <div class="col-sm-12">
+               <div class="col-sm-12 text-right">
                   <button type="button"
                           class="btn btn-options"
                           ng-click="savePDF('bodyQuote')">

@@ -22,7 +22,7 @@ var app = angular.module('markdownTest', [
 })
 .service('getQuote', function($http) {
    return function() {
-      var promise = $http.get("../md/text.md").then(function (response) {
+      var promise = $http.get("../md/example.md").then(function (response) {
          return response.data;
       });
       console.log(promise);
@@ -35,10 +35,22 @@ var app = angular.module('markdownTest', [
       $scope.data.quote = d;
    });
 })
-.controller('createController', function($scope) {
+.controller('createController', function($scope, getQuote) {
    var aux = 1;
    $scope.isMinize = false;
 
+   /* Example Data */
+   $scope.client_name = 'Cliente';
+   $scope.client_email = 'cliente@email.com';
+   $scope.client_web = 'www.cliente.com';
+   $scope.user_name = 'Username';
+   $scope.user_position = 'Company Position';
+   $scope.user_email = 'user@sinaptica.com.ar';
+   getQuote().then(function(d) {
+      $scope.content = d;
+   });
+
+   /* minimize createInner */
    $scope.minimize = function() {   
       if(aux) {
          $scope.isMinize = true;
@@ -47,16 +59,17 @@ var app = angular.module('markdownTest', [
          $scope.isMinize = false;
          aux = 1;
       };      
-   }
+   };
 
-   $scope.maximize = function() {
-      $scope.isMinize = false;
-   }
-
+   /* savePDF function */
    $scope.savePDF = function() { window.print(); };
    
-   $scope.showContent = function($fileContent){ $scope.content = $fileContent; };
+   /* function take input file and send data to model */
+   $scope.showContent = function($fileContent){
+      $scope.content = $fileContent;
+   };
 
+   /* get data from textfile and make a downloadable file */
    $scope.downloadFile = function(filename, data) {
       var success = false;
       var contentType = 'text/plain;charset=utf-8';
@@ -133,4 +146,4 @@ var app = angular.module('markdownTest', [
          //window.open(httpPath, '_blank', '');
       }
    };
-})
+});
